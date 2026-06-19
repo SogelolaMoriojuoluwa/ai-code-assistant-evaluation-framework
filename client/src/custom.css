@@ -1,0 +1,64 @@
+/* Custom styles for Copilot Clinic */
+
+/* Better spacing on mobile */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  h1.fw-bold {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Navbar active link styling */
+.navbar .nav-link.active {
+  color: #0d6efd !important;
+  font-weight: 600;
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* Card hover effect for Case Studies */
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* Code textarea styling for Clinic page */
+textarea {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 576px) {
+  textarea {
+    font-size: 0.8rem;
+  }
+}
+
+/* Button touch targets for mobile */
+.btn {
+  min-height: 44px;
+}
+
+/* Sticky footer spacing */
+.min-vh-100 {
+  display: flex;
+  flex-direction: column;
+}
+
+.min-vh-100 > div:last-child {
+  flex: 1;
+}
