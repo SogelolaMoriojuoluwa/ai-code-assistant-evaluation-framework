@@ -66,7 +66,7 @@ export default function Clinic() {
 
     try {
       const response = await fetch(
-        "http://localhost:3001/api/refactor",
+        "http://copilot-clinic-production.up.railway.app/analyze",
         {
           method: "POST",
           headers: {
