@@ -66,7 +66,7 @@ export default function Clinic() {
 
     try {
       const response = await fetch(
-        "http://copilot-clinic-production.up.railway.app/analyze",
+        '${import.meta.env.VITE_API_URL}/analyze',
         {
           method: "POST",
           headers: {
