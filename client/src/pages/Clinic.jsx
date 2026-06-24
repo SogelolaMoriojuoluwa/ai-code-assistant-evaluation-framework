@@ -66,7 +66,7 @@ export default function Clinic() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/refactor`,
+        `${import.meta.env.VITE_API_URL}/api/refactor`,
         {
           method: "POST",
           headers: {
