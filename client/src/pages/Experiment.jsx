@@ -7,7 +7,7 @@ import {
 } from "../services/experimentService";
 
 import Timer from "../component/experiment/Timer";
-import CodeEditor from "../component/experiment/CodeEditor";
+import CodeEditor from "../component/experiment/codeEditor";
 
 import "./styles/Experiment.css";
 
