@@ -1,0 +1,33 @@
+.experiment-page{
+    min-height:100vh;
+    background:#f5f7fb;
+    padding:40px;
+}
+
+.experiment-card{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    padding:35px;
+}
+
+.info-card{
+    background:#eef5ff;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:25px;
+}
+
+.timer-box{
+    background:#0A1F44;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.submit-btn{
+    margin-top:20px;
+}

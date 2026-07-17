@@ -1,0 +1,39 @@
+.register-page{
+    min-height:100vh;
+    background:#f5f7fb;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.register-card{
+
+    width:100%;
+    max-width:520px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+}
+
+.register-card h2{
+
+    font-weight:700;
+    color:#0A1F44;
+}
+
+.btn-primary{
+
+    background:#008C8C;
+    border:none;
+}
+
+.btn-primary:hover{
+
+    background:#0A1F44;
+}

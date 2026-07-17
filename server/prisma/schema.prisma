@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SkillLevel {
+  BEGINNER
+  INTERMEDIATE
+  EXPERT
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum ExperimentGroup {
+  A
+  B
+  C
+}
+
+enum ExperimentStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+}
+
+
+
+model Participant {
+  id              Int      @id @default(autoincrement())
+  participantId   String   @unique
+  assignedGroup   ExperimentGroup
+  skillLevel      SkillLevel
+  experienceYears Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  experiments Experiment[]
+}
+
+model Task {
+  id              Int      @id @default(autoincrement())
+  taskCode        String   @unique
+  title           String
+  module          String
+  category        String
+  difficulty      Difficulty
+  description     String
+  baselineTime   Int
+  maxScore Int @default(100)
+  isActive Boolean @default(true)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  experiments Experiment[]
+}
+
+model Experiment {
+  id                Int                @id @default(autoincrement())
+  experimentId      String             @unique
+
+  participantId     Int
+  participant        Participant @relation(fields: [participantId], references: [id])
+
+  taskId            Int
+  task               Task @relation(fields: [taskId], references: [id])
+
+  status            ExperimentStatus @default(PENDING)
+
+  startedAt         DateTime?
+  completedAt       DateTime?
+
+  duration          Int?
+
+  timeVariance      Int?
+
+  submissionStatus Boolean @default(false)
+
+  score            Int? @default(0)
+
+  remarks          String?
+
+  frameworkVersion  String @default("1.0")
+
+  cancelReason      String?
+
+  createdAt         DateTime @default(now())
+
+  updatedAt         DateTime @updatedAt
+  evaluation        Evaluation?
+}
+
+model Evaluation {
+  id                    Int      @id @default(autoincrement())
+
+  experimentId          Int      @unique
+  experiment            Experiment @relation(fields: [experimentId], references: [id])
+
+  submittedCode         String? 
+
+  overallScore          Int
+
+  report                Json
+
+  createdAt             DateTime @default(now())
+}

@@ -1,0 +1,26 @@
+import js from "@eslint/js";
+import globals from "globals";
+
+export default [
+  js.configs.recommended,
+
+  {
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+
+      globals: {
+        ...globals.node,
+      },
+    },
+
+    rules: {
+      semi: ["warn", "always"],
+      quotes: ["warn", "double"],
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "no-extra-semi": "warn",
+      "no-trailing-spaces": "warn",
+    },
+  },
+];

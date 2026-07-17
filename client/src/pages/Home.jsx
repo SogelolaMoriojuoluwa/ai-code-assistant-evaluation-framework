@@ -1,23 +1,53 @@
-import { Container, Button, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import "./styles/Home.css";
 
- function Home() {
+export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <Container className="py-5 text-center">
-      <Row className="justify-content-center">
-        <Col md={8}>
-          <h1 className="display-4 fw-bold mb-4">Measure Human + AI Synergy</h1>
-          <p className="lead text-muted mb-4">
-            Copilot Clinic benchmarks code quality and delivery speed with vs without GitHub Copilot. 
-            Built for my FYP on AI-assisted web development.
-          </p>
-          <Button as={Link} to="/clinic" variant="primary" size="lg">
-            Try the Clinic
-          </Button>
-        </Col>
-      </Row>
-    </Container>
-  )
-}
+    <div className="home-page">
 
-export default Home
+      <div className="overlay">
+
+        <div className="home-card shadow">
+
+          <h1>
+            AI Code Assistant Evaluation Framework
+          </h1>
+
+          <p className="lead mt-4">
+            Design and Implementation of a Framework for Evaluating the Impact
+            of AI Code Assistants (GitHub Copilot) on Code Quality and Delivery
+            Speed in Web Development.
+          </p>
+
+          <div className="features">
+
+            <div>✔ Code Quality Analysis</div>
+
+            <div>✔ Delivery Speed Measurement</div>
+
+            <div>✔ AI Evaluation Report</div>
+
+            <div>✔ Developer Performance Dashboard</div>
+
+          </div>
+
+          <button
+            className="btn btn-lg btn-primary mt-4"
+            onClick={() => navigate("/register")}
+          >
+            Start Evaluation
+          </button>
+
+          <p className="version mt-4">
+            Framework Version 1.0
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+}

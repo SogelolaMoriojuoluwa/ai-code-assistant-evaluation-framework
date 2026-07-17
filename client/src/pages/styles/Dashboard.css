@@ -1,0 +1,40 @@
+.dashboard-page{
+    min-height:100vh;
+    background:#f5f7fb;
+    padding:40px;
+}
+
+.dashboard-card{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    padding:35px;
+}
+
+.section-title{
+
+    color:#0A1F44;
+
+    font-weight:700;
+
+    margin-top:35px;
+
+    margin-bottom:20px;
+}
+
+.info-box{
+
+    background:#eef5ff;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+}
+
+.card{
+
+    border-radius:10px;
+}
